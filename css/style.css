@@ -1,0 +1,95 @@
+.goods-list{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+}
+.goods-item{
+    border: 1px solid #464644;
+    padding: 40px;
+    border-radius: 5px;
+}
+.goods-item:hover{
+    background-color: rgb(205, 219, 196);
+    cursor: pointer;
+}
+.cart-button{
+    margin-right: 25px;
+    padding: 3px;
+    cursor: pointer;
+}
+.cart-button:hover{
+    background: cadetblue;
+}
+.header-top{
+    background: beige;
+    margin-bottom: 10px;
+    
+}
+h3{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+.wrap-cart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-shopping-cart{
+    font-size: 40px;
+    color: green;
+}
+.li-menu{
+    width: 30%;
+    text-align: center;
+
+}
+.li-menu>a{
+    text-decoration: none;
+}
+.cart-button{
+    border: none;
+    background: white;
+}
+.cart-button:hover{
+    background: lightcyan;
+}
+.menu-ul{
+    width: 95%;
+    margin-bottom: 15px;
+}
+.button-cart{
+    height: 15px;
+}
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    display: flex;
+    justify-content: space-around;
+    background:#F44; /*добавляем фон всему меню*/
+    height: 50px; /*задаем высоту*/
+  }
+  a {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#FF4444; /*добавляем фон к пункту меню*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block; 
+    border-right: 1px solid #F36262; /*добавляем бордюр справа*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+  
+  }
+  a:hover {
+    background:#D43737;/*добавляем эффект при наведении*/
+  }
+  li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+  }
