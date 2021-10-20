@@ -1,33 +1,119 @@
-const goods = [
-    { title: 'Shirt', price: 150, img: 'img/shirt.jpg' },
-    { title: 'Jeans', price: 50, img: 'img/jins.jpg' },
-    { title: 'Jacket', price: 350, img: 'img/jacket.jpg' },
-    { title: 'Shoes', price: 250, img: 'img/shoose.jpg' }
-];
+class GoodsItem {
+    constructor(title, price) {
+        this.title = title
+        this.price = price
+    }
 
-const $goodsList = document.querySelector('.goods-list');
+    render() {
+        return `<div class="goods-item"><h3>${this.title}</h3><p>${this.price}</p></div>`
+    }
+}
 
- goods.forEach(good => $goodsList.innerHTML += `<div class="goods-item"><h3><img width="100" src="${good.img}"></h3><hr><h3>${good.title}</h3><p><span class="span-price">${good.price}$</span></p>
- <div class="parent-add"><a class="a-class" href="#"> Добавить</a></div>
-</div> `)
+class GoodsList {
+    constructor() {
+        this.goods = []
+    }
+    fetchGoods() {
+        this.goods = [
+            { title: 'Shirt', price: 150 },
+            { title: 'Socks', price: 50 },
+            { title: 'Jacket', price: 350 },
+            { title: 'Shoes', price: 250 },
+            { title: 'Shoes', price: 250 },
+        ]
+    }
+    render() {
+        let listHtml = ""
+        this.goods.forEach(good => {
+            const goodItem = new GoodsItem(good.title, good.price)
+            listHtml += goodItem.render()
+        })
+        document.querySelector(".goods-list").innerHTML = listHtml
+    }
+
+    summ() {
+        return this.goods.reduce((acc, currentValue) => acc + currentValue.price, 0)
+    }
+}
+
+const list = new GoodsList()
+list.fetchGoods()
+list.render()
+list.summ()
+
+
+
+// Корзина
+
+class Cart {
+    constructor() {
+        this.cart = []
+    }
+
+
+    deleteAllGoods() {
+
+    }
+
+
+}
+class CartItem {
+    constructor(name, price, count) {
+        this.name = name
+        this.price = price
+        this.count = count
+    }
+
+    deleteGood() {
+
+    }
+    plusGood() {
+
+    }
+    minusGood() {
+
+    }
+
+}
+
+
+
+class Hamburger {
+    constructor(size, stuffing) {
+        this.stuffing = stuffing
+        this.size = size
+    }
 
 
 
 
 
 
-// const renderGoodsItem = ({ title, price }) => {
-//     return `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
-// };
+    addTopping(topping) {  //добавить добавку
 
-// const renderGoodsList = (list = goods) => {
-//     let goodsList = list.map(
-//         item => renderGoodsItem(item)
-//     );
+    }
+    removeTopping(topping) {  // убрать добавку
 
-//     $goodsList.innerHTML = goodsList.join(" ");
-// }
+    }
+    getToppings(topping) {  // получить спсок добавок
 
-// renderGoodsList();
+    }
 
+    getSize() { // получить размер гамбургера
+        return size
+    }
+    getStuffing() { //узнать начинку гамбургера
+
+    }
+    calculatePrice() { // Узнать цену
+
+    }
+    calculateCalories() { // Узнать калорийность
+
+    }
+}
+
+let hun = new Hamburger()
+hun(15, 50)
+hun.size()
 
